@@ -1,0 +1,58 @@
+# ${project.name} - primary configuration file, generated with version ${project.version}
+
+# Should we collect anonymous metrics? (Server version, Java version, player count, etc...)
+# Modifying this setting requires a server reboot to take effect.
+metrics: true
+
+# The delay between these actions (in milliseconds).
+# Setting a value to 0 will disable the feature.
+delay:
+  # The delay between chat messages.
+  chat: 0
+  # The delay between commands.
+  commands: 0
+
+# Should these actions require movement prior to being performed?
+movement-required:
+  # Should chatting require movement?
+  chat: false
+  # Should commands require movement?
+  commands: false
+
+# Should we prevent similarities in these actions?
+# Setting a percentage value to 0 will disable the feature.
+similarity:
+  # Should this check be case-sensitive?
+  case-sensitive: false
+  # Should we ignore player usernames when performing this check?
+  # This may have performance implications if a lot of users are online.
+  ignore-usernames: false
+  # The minimum length of a chat message to perform the similarity check.
+  chat-minimum: 6
+  # The minimum percentage of similarity to the previous chat message.
+  chat-percentage: 0
+  # The minimum length of a command to perform the similarity check.
+  command-minimum: 12
+  # The minimum percentage of similarity to the previous command.
+  command-percentage: 0
+  # Words that will be excluded from this check.
+  list: [ ]
+
+# Should we prevent excessive uppercase in these actions?
+# Setting a percentage value to 0 will disable the feature.
+uppercase:
+  # Should we cancel actions that violate this check?
+  cancel: false
+  # Should we ignore player usernames when performing this check?
+  # This may have performance implications if a lot of users are online.
+  ignore-usernames: false
+  # The minimum length of a chat message to perform the excessive uppercase check.
+  chat-minimum: 6
+  # The minimum percentage of uppercase in the chat message.
+  chat-percentage: 0
+  # The minimum length of a command's contents to perform the excessive uppercase check.
+  command-minimum: 12
+  # The minimum percentage of uppercase in the command.
+  command-percentage: 0
+  # Words that will be excluded from this check.
+  list: [ ]

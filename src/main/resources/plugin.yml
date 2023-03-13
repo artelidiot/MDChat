@@ -1,0 +1,128 @@
+name: MDChat
+author: Artel
+description: '${project.description}'
+
+version: ${project.version}
+main: me.artel.mdchat.MDChatPlugin
+api-version: '1.13'
+
+depend: [ ]
+
+softdepend:
+  - 'PlaceholderAPI'
+  - 'Vault'
+
+permissions:
+  'mdchat.*':
+    description: "Grants access to everything from MDChat."
+    default: op
+    children:
+
+      # Permissions for commands, sub-commands, etc.
+      'mdchat.command.*':
+        description: "Grants access to all commands."
+        children:
+          'mdchat.command':
+            description: "Grants access to the MDChat command."
+          'mdchat.command.clear':
+            description: "Grants access to clear the chat."
+          'mdchat.command.motd':
+            description: "Grants access to view the MOTD."
+          'mdchat.command.reload':
+            description: "Grants access to reload MDChat."
+
+      # Permission to view all announcements.
+      'mdchat.announcement.*':
+        description: "Grants access to view all announcements."
+
+      # Permissions for bypassing filters, cooldowns, etc.
+      'mdchat.bypass.*':
+        description: "Grants access to bypass all filters, cooldowns, etc."
+        children:
+          'mdchat.bypass.clear':
+            description: "Grants access to bypass chat clearing."
+          'mdchat.bypass.delay.*':
+            description: "Grants access to bypass all delays."
+            children:
+              'mdchat.bypass.delay.chat':
+                description: "Grants access to bypass the chat delay."
+              'mdchat.bypass.delay.commands':
+                description: "Grants access to bypass the command delay."
+          'mdchat.bypass.movement.*':
+            description: "Grants access to bypass all movement requirements."
+            children:
+              'mdchat.bypass.movement.chat':
+                description: "Grants access to bypass the chat movement requirement."
+              'mdchat.bypass.movement.commands':
+                description: "Grants access to bypass the command movement requirement."
+          'mdchat.bypass.similarity.*':
+            description: "Grants access to bypass all similarity checks."
+            children:
+              'mdchat.bypass.similarity.chat':
+                description: "Grants access to bypass the chat similarity check."
+              'mdchat.bypass.similarity.commands':
+                description: "Grants access to bypass the command similarity check."
+          'mdchat.bypass.uppercase.*':
+            description: "Grants access to bypass all excessive uppercase checks."
+            children:
+              'mdchat.bypass.uppercase.chat':
+                description: "Grants access to bypass the chat excessive uppercase check."
+              'mdchat.bypass.uppercase.commands':
+                description: "Grants access to bypass the command excessive uppercase check."
+          # Per-rule bypass permissions are automatically generated at runtime via. rule identifiers.
+          'mdchat.bypass.rule.*':
+            description: "Grants access to bypass all rules."
+
+      # Permissions for colors, formatting, etc.
+      'mdchat.color.*':
+        description: "Grants access to use all color codes."
+        children:
+          'mdchat.color.a':
+            description: "Grants access to the '&a' color code."
+          'mdchat.color.b':
+            description: "Grants access to the '&b' color code."
+          'mdchat.color.c':
+            description: "Grants access to the '&c' color code."
+          'mdchat.color.d':
+            description: "Grants access to the '&d' color code."
+          'mdchat.color.e':
+            description: "Grants access to the '&e' color code."
+          'mdchat.color.f':
+            description: "Grants access to the '&f' color code."
+          'mdchat.color.1':
+            description: "Grants access to the '&1' color code."
+          'mdchat.color.2':
+            description: "Grants access to the '&2' color code."
+          'mdchat.color.3':
+            description: "Grants access to the '&3' color code."
+          'mdchat.color.4':
+            description: "Grants access to the '&4' color code."
+          'mdchat.color.5':
+            description: "Grants access to the '&5' color code."
+          'mdchat.color.6':
+            description: "Grants access to the '&6' color code."
+          'mdchat.color.7':
+            description: "Grants access to the '&7' color code."
+          'mdchat.color.8':
+            description: "Grants access to the '&8' color code."
+          'mdchat.color.9':
+            description: "Grants access to the '&9' color code."
+          'mdchat.color.0':
+            description: "Grants access to the '&0' color code."
+          'mdchat.color.hex':
+            description: "Grants access to the hexadecimal '&#RRGGBB' color code."
+      'mdchat.format.*':
+        description: "Grants access to use all formatting codes."
+        children:
+          'mdchat.format.k':
+            description: "Grants access to the '&k' format code."
+          'mdchat.format.l':
+            description: "Grants access to the '&l' format code."
+          'mdchat.format.m':
+            description: "Grants access to the '&m' format code."
+          'mdchat.format.n':
+            description: "Grants access to the '&n' format code."
+          'mdchat.format.o':
+            description: "Grants access to the '&o' format code."
+          'mdchat.format.r':
+            description: "Grants access to the '&r' format code."

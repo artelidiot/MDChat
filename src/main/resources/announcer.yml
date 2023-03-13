@@ -1,0 +1,57 @@
+# ${project.name} - announcer configuration file, generated with version ${project.version}
+
+# Should the announcer be enabled?
+enabled: false
+# Should the announcer run numerically ordered?
+# When set to false, announcements will be randomized (duplicates avoided).
+ordered: true
+# How many players should be online for announcements to be sent?
+# Setting the value to 0 will allow announcements to be sent all the time.
+minimum-players: 1
+# The delay between announcements (in seconds).
+delay: 300
+
+# The announcements that will be run (ordered).
+# Available alignments: default (untouched), center, left, right
+# Available sounds: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+announcements:
+  '1':
+    alignment: "default"
+    permission: false
+    sound: false
+    content: |-
+      Hello, {player_display_name}!
+      This is the first example announcement from MDChat.
+  '2':
+    alignment: "default"
+    permission: false
+    sound: false
+    content: |-
+      Hello, {player_display_name}!
+      This is the second example announcement from MDChat.
+  '3':
+    # If the alignment is not specified, it will use default alignment.
+    alignment: "default"
+    # If a permission is not specified or set to false, it will be ignored.
+    permission: "mdchat.announcement.three"
+    # If the sound is not specified or set to false, it will be entirely disabled.
+    sound:
+      # The name of the sound (see above for available sounds).
+      name: "block_note_block_pling"
+      # The pitch of the sound.
+      pitch: 1.0
+      # The volume of the sound (0.0 = inaudible, 0.5 = half volume, 1.0 = full volume).
+      volume: 0.5
+    content: |-
+      Hello, {player_display_name}!
+      This is an example announcement with sound and a permission requirement from MDChat.
+  '4':
+    alignment: "center"
+    permission: false
+    sound: false
+    # If the world is not specified, it will default to global.
+    # World specific announcements follow their own order per-world.
+    world: "world_the_end"
+    content: |-
+      Hello, {player_display_name}!
+      This is an example announcement only available in the End from MDChat.

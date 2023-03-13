@@ -1,0 +1,323 @@
+# ${project.name} - rule configuration file, generated with version ${project.version}
+
+# Should the rules be globally enabled?
+enabled: false
+
+# Should we give the player their sign back if we destroy it?
+drop-signs: true
+# Should we automatically strip diacritical marks (e.g. 'éxámplé' -> 'example')?
+strip-diacritical-marks: false
+
+rules:
+  # This rule will prevent any unicode symbols in a user's message.
+  # Additionally, this rule will be documented and will serve as the tutorial rule.
+  # The name of this section is known as the rule's identifier, it can be named anything (excl. periods and spaces), however, it has to unique.
+  # It will be used for permission assignment, if you want to grant permission to bypass a rule, the permission format is 'mdchat.bypass.rule.<identifier>'.
+  'unicode':
+    # This setting will determine whether this rule will be enabled.
+    enabled: false
+    # This setting will determine whether the trigger should be tested against regex.
+    #   Don't know what regex is? You can read about it here: https://en.wikipedia.org/wiki/Regular_expression
+    #   Need to test your regex? You can do so here: https://regex101.com/?flavor=java
+    regex: true
+    # This setting will determine whether the user's message will be cancelled.
+    #   This setting does not need to be defined if the message is going to be replaced.
+    cancel: false
+    # This setting will determine whether the caught trigger will be replaced rather than cancelled.
+    #   This setting does not need to be defined if the message is going to be cancelled.
+    replace: true
+    # This is the text that will replace the matched trigger. (e.g. 'example' -> '*******')
+    replacement: "?"
+    # The trigger itself.
+    trigger: '(?!\p{Sc})([^\p{InBasic_Latin}]+)'
+    # The response to the user that their action was blocked.
+    #   You can either write a unique message or use a predefined one from the language file by using a placeholder. (e.g. '{@unicode}')
+    response: "{@unicode}"
+    # The commands executed when a user violates the rule.
+    #   This is only recommended if your rule is extremely accurate to ensure you don't punish users for false positives.
+    commands: [ ]
+    # These settings determine if the rule will be processed for the specified actions.
+    #   They work on an opt-out basis, so they do not need to be defined unless you want to exclude an action.
+    #   Example: 'check-anvils' will process anvil renames, 'check-books' will process book modifications, etc...
+    check-anvils: true
+    check-books: true
+    check-chat: true
+    check-commands: true
+    check-signs: true
+  'advert':
+    enabled: false
+    regex: true
+    replace: true
+    replacement: "*"
+    # This is a placeholder for a powerful and predefined URL/IP address regex filter.
+    trigger: '{advert-regex}'
+    response: "{@advert}"
+  'anal':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(a+(\W|\d|_)*n+(\W|\d|_)*a+(\W|\d|_)*l)\b'
+    response: "{@swear}"
+  'ass':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(a+(\W|\d|_)*s+(\W|\d|_)*s)\b'
+    response: "{@swear}"
+  'asshole':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(a+(\W|\d|_)*s+(\W|\d|_)*s+(\W|\d|_)*h+(\W|\d|_)*o+(\W|\d|_)*l+(\W|\d|_)*e)'
+    response: "{@swear}"
+  'bitch':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(b+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*c+(\W|\d|_)*h)'
+    response: "{@misogyny}"
+  'chode':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(c+(\W|\d|_)*h+(\W|\d|_)*o+(\W|\d|_)*d+(\W|\d|_)*e)'
+    response: "{@swear}"
+  'clit':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(c+(\W|\d|_)*l+(\W|\d|_)*i+(\W|\d|_)*t)'
+    response: "{@swear}"
+  'cock':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(c+(\W|\d|_)*o+(\W|\d|_)*c+(\W|\d|_)*k)'
+    response: "{@swear}"
+  'cum':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(c+(\W|\d|_)*u+(\W|\d|_)*m)\b'
+    response: "{@swear}"
+  'cunt':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(c+(\W|\d|_)*u+(\W|\d|_)*n+(\W|\d|_)*t)'
+    response: "{@misogyny}"
+  'dick':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(d+(\W|\d|_)*i+(\W|\d|_)*c+(\W|\d|_)*k)'
+    response: "{@swear}"
+  'dumbass':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(d+(\W|\d|_)*u+(\W|\d|_)*m+(\W|\d|_)*b+(\W|\d|_)*a+(\W|\d|_)*s+(\W|\d|_)*s)'
+    response: "{@swear}"
+  'fag':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(f+(\W|\d|_)*a+(\W|\d|_)*g)'
+    response: "{@discrimination}"
+  'fuck':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(f+(\W|\d|_)*u+(\W|\d|_)*c+(\W|\d|_)*k)'
+    response: "{@swear}"
+  'nigga':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(n+(\W|\d|_)*i+(\W|\d|_)*g+(\W|\d|_)*g+(\W|\d|_)*a)'
+    response: "{@racism}"
+  'nigger':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(n+(\W|\d|_)*i+(\W|\d|_)*g+(\W|\d|_)*g+(\W|\d|_)*e+(\W|\d|_)*r)'
+    response: "{@racism}"
+  'penis':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(p+(\W|\d|_)*e+(\W|\d|_)*n+(\W|\d|_)*i+(\W|\d|_)*s)'
+    response: "{@swear}"
+  'piss':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(p+(\W|\d|_)*i+(\W|\d|_)*s+(\W|\d|_)*s)'
+    response: "{@swear}"
+  'prick':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(p+(\W|\d|_)*r+(\W|\d|_)*i+(\W|\d|_)*c+(\W|\d|_)*k)'
+    response: "{@swear}"
+  'pussy':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(p+(\W|\d|_)*u+(\W|\d|_)*s+(\W|\d|_)*s+(\W|\d|_)*y)'
+    response: "{@swear}"
+  'shit':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(s+(\W|\d|_)*h+(\W|\d|_)*i+(\W|\d|_)*t)'
+    response: "{@swear}"
+  'slut':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(s+(\W|\d|_)*l+(\W|\d|_)*u+(\W|\d|_)*t)'
+    response: "{@misogyny}"
+  'spic':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(s+(\W|\d|_)*p+(\W|\d|_)*i+(\W|\d|_)*c)\b'
+    response: "{@racism}"
+  'tit':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(t+(\W|\d|_)*i+(\W|\d|_)*t)\b'
+    response: "{@swear}"
+  'tits':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(t+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*s)\b'
+    response: "{@swear}"
+  'titty':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(t+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*t+(\W|\d|_)*y)'
+    response: "{@swear}"
+  'titties':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(t+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*t+(\W|\d|_)*i+(\W|\d|_)*e+(\W|\d|_)*s)'
+    response: "{@swear}"
+  'tramp':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(t+(\W|\d|_)*r+(\W|\d|_)*a+(\W|\d|_)*m+(\W|\d|_)*p)\b'
+    response: "{@misogyny}"
+  'twat':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(t+(\W|\d|_)*w+(\W|\d|_)*a+(\W|\d|_)*t)\b'
+    response: "{@swear}"
+  'vagina':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(v+(\W|\d|_)*a+(\W|\d|_)*g+(\W|\d|_)*i+(\W|\d|_)*n+(\W|\d|_)*a)'
+    response: "{@swear}"
+  'whore':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(w+(\W|\d|_)*h+(\W|\d|_)*o+(\W|\d|_)*r+(\W|\d|_)*e)'
+    response: "{@misogyny}"
+  'kill-yourself':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(k+(\W|\d|_)*i+(\W|\d|_)*l+(\W|\d|_)*l+(\W|\d|_)*y+(\W|\d|_)*o+(\W|\d|_)*u+(\W|\d|_)*r+(\W|\d|_)*s+(\W|\d|_)*e+(\W|\d|_)*l+(\W|\d|_)*f)'
+    response: "{@toxicity}"
+  'kill-yourselves':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(k+(\W|\d|_)*i+(\W|\d|_)*l+(\W|\d|_)*l+(\W|\d|_)*y+(\W|\d|_)*o+(\W|\d|_)*u+(\W|\d|_)*r+(\W|\d|_)*s+(\W|\d|_)*e+(\W|\d|_)*l+(\W|\d|_)*v+(\W|\d|_)*e+(\W|\d|_)*s)'
+    response: "{@toxicity}"
+  # Slang for "kill yourself"
+  'kys':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(k+(\W|\d|_)*y+(\W|\d|_)*s)\b'
+    response: "{@toxicity}"
+  # Slang for "as fuck"
+  'asf':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(a+(\W|\d|_)*s+(\W|\d|_)*f)\b'
+    response: "{@swear}"
+  # Slang for "as fuck"
+  'af':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(a+(\W|\d|_)*f)\b'
+    response: "{@swear}"
+  # Slang for "laugh(ing) my fucking ass off"
+  'lmfao':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(l+(\W|\d|_)*m+(\W|\d|_)*f+(\W|\d|_)*a+(\W|\d|_)*o)\b'
+    response: "{@swear}"
+  # Slang for "laugh(ing) my ass off"
+  'lmao':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(l+(\W|\d|_)*m+(\W|\d|_)*a+(\W|\d|_)*o)\b'
+    response: "{@swear}"
+  # Slang for "what the fuck"
+  'wtf':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(w+(\W|\d|_)*t+(\W|\d|_)*f)\b'
+    response: "{@swear}"
+  # Slang for "the fuck"
+  'tf':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(t+(\W|\d|_)*f)\b'
+    response: "{@swear}"
+  # Slang for "oh my fucking god"
+  'omfg':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(o+(\W|\d|_)*m+(\W|\d|_)*f+(\W|\d|_)*g)\b'
+    response: "{@swear}"
+  # Slang for "for fuck's sake"
+  'ffs':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(f+(\W|\d|_)*f+(\W|\d|_)*s)\b'
+    response: "{@swear}"
+  # Slang for "shut the fuck up"
+  'stfu':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(s+(\W|\d|_)*t+(\W|\d|_)*f+(\W|\d|_)*u)\b'
+    response: "{@swear}"
+  # Slang for "fuck you"
+  'fu':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '\b(f+(\W|\d|_)*u)\b'
+    response: "{@swear}"

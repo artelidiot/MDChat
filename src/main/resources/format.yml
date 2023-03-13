@@ -1,0 +1,35 @@
+# ${project.name} - format configuration file, generated with version ${project.version}
+
+# Should we override the default chat format?
+enabled: false
+
+# Should we use the advanced formatter?
+# This enables features such as hover, click and more.
+# Set this to false if you don't plan on using those features to avoid potential conflicts.
+use-advanced-formatter: true
+
+# Available Placeholders for Formatting:
+#   {player_name} - The player's username
+#   {player_display_name} - The player's display name
+#   {message} - The message sent
+#   PlaceholderAPI - https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders
+
+# The global format
+#   This will be used if both group and user formats cannot be found or are effectively disabled.
+format: "{player_name}: {message}"
+
+# Per-group formatting
+# Use this to give specific groups a unique format. Requires Vault and a permission plugin such as LuckPerms.
+# Format:
+#   group-name: "format"
+group-formats:
+  # A unique format for the 'default' group, for example.
+  'default': "[Default] {player_name}: {message}"
+
+# Per-player formatting
+# Use this to give specific players a unique format.
+# Format:
+#   'player-uuid': "format"
+player-formats:
+  # A unique format for Minecraft's creator, for example.
+  '069a79f4-44e9-4726-a5be-fca90e38aaf5': "[Mojang] {player_name}: {message}"

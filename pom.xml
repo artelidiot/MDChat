@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>me.artel</groupId>
+    <artifactId>mdchat</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>MDChat</name>
+    <description>A chat management plugin for Spigot implementing MineDown.</description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Check for updates here: https://github.com/SpongePowered/Configurate/releases -->
+        <configurate.version>4.1.2</configurate.version>
+
+        <!-- Check for updates here: https://github.com/JorelAli/CommandAPI/releases -->
+        <commandapi.version>8.7.6</commandapi.version>
+
+        <!-- Check for updates here: https://github.com/tdebatty/java-string-similarity/releases -->
+        <similarity.version>2.0.0</similarity.version>
+
+        <!-- Check for updates here: https://github.com/MilkBowl/VaultAPI/releases -->
+        <vault.version>1.7.1</vault.version>
+
+        <!-- Check for updates here: https://github.com/PlaceholderAPI/PlaceholderAPI/releases -->
+        <placeholderapi.version>2.11.2</placeholderapi.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>codemc.io</id>
+            <url>https://repo.codemc.io/repository/nms/</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>extendedclip.com</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.19-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.gitlab.artel</groupId>
+            <artifactId>feather</artifactId>
+            <version>0.0.9-alpha</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spongepowered</groupId>
+            <artifactId>configurate-yaml</artifactId>
+            <version>${configurate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.jorel</groupId>
+            <artifactId>commandapi-shade</artifactId>
+            <version>${commandapi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>info.debatty</groupId>
+            <artifactId>java-string-similarity</artifactId>
+            <version>${similarity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.MilkBowl</groupId>
+            <artifactId>VaultAPI</artifactId>
+            <version>${vault.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>${placeholderapi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>clean package</defaultGoal>
+        <finalName>${project.name}-${project.version}</finalName>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <minimizeJar>true</minimizeJar>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <relocations>
+                        <relocation>
+                            <pattern>example.group.artifact</pattern>
+                            <shadedPattern>${project.groupId}.${project.artifactId}.lib.example-artifact</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>me.artel.feather</pattern>
+                            <shadedPattern>${project.groupId}.${project.artifactId}.lib.feather</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.spongepowered.configurate</pattern>
+                            <shadedPattern>${project.groupId}.${project.artifactId}.lib.configurate</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>dev.jorel.commandapi</pattern>
+                            <shadedPattern>${project.groupId}.${project.artifactId}.lib.command-api</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>info.debatty.java.stringsimilarity</pattern>
+                            <shadedPattern>${project.groupId}.${project.artifactId}.lib.string-similarity</shadedPattern>
+                        </relocation>
+                    </relocations>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/**</exclude>
+                                <exclude>net/jcip/annotations/**</exclude>
+                                <exclude>**/LICENSE</exclude>
+                                <exclude>**/package-info.class</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

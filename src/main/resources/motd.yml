@@ -1,0 +1,11 @@
+# ${project.name} - message of the day configuration file, generated with version ${project.version}
+
+# Should we enable our MOTD?
+enabled: false
+# Delay sending the MOTD by this value (in milliseconds).
+delay: 1000
+
+# The MOTD to send to players.
+motd: |-
+  Hello, {player_display_name}!
+  This is the example message of the day from MDChat.
