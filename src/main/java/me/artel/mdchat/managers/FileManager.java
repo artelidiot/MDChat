@@ -3,7 +3,6 @@ package me.artel.mdchat.managers;
 import lombok.SneakyThrows;
 import me.artel.feather.files.YAMLFile;
 import me.artel.mdchat.MDChatPlugin;
-import me.artel.mdchat.utils.MDUtil;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 

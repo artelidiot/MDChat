@@ -25,3 +25,4 @@ performance. Includes features such as RegExp parsing, advanced chat formatting,
 * [Configurate](https://github.com/SpongePowered/Configurate) - We use `Configurate` to handle all of our configuration files.
 * [CommandAPI](https://github.com/JorelAli/CommandAPI) - We use `CommandAPI` to register all of our commands.
 * [java-string-similarity](https://github.com/tdebatty/java-string-similarity) - We use `java-string-similarity` to perform our similarity checks.
+* [bStats](https://github.com/Bastian/bStats) - We use `bStats` to collect metrics.

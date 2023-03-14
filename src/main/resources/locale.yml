@@ -27,3 +27,5 @@ toxicity: "&c\u26A0 Toxicity is not allowed on this server."
 # Locale options for the '/mdchat' command
 command-reloaded: |-
   &2{prefix} &aThe plugin has finished reloading.
+command-cleared: |-
+  &2{prefix} &aThe chat has been cleared.

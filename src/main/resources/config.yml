@@ -42,6 +42,7 @@ similarity:
 # Setting a percentage value to 0 will disable the feature.
 uppercase:
   # Should we cancel actions that violate this check?
+  # When this is false, actions will be replaced with lowercase instead.
   cancel: false
   # Should we ignore player usernames when performing this check?
   # This may have performance implications if a lot of users are online.

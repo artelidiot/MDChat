@@ -3,27 +3,33 @@ package me.artel.mdchat.commands.mdchat.subcommands;
 import dev.jorel.commandapi.CommandAPICommand;
 import me.artel.feather.messaging.Messenger;
 import me.artel.mdchat.managers.FileManager;
+import me.artel.mdchat.utils.MDUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class ClearSubCommand {
+
+    // This text is not configurable, therefore it does not need to be recreated each run.
+    private static final String clear = ChatColor
+            .translateAlternateColorCodes('&', "&0\n&8\n&7\n&f\n")
+            .repeat(69);
 
     public static CommandAPICommand clearSubCommand = new CommandAPICommand("clear")
             .withPermission("mdchat.command.clear")
             .withShortDescription("Clears the chat.")
             .executes((sender, args) -> {
-                clear(false);
+                clear(sender, false);
             })
             .withSubcommand(new CommandAPICommand("silent")
                     .withAliases("s", "-silent", "-s")
                     .executes((sender, args) -> {
-                        clear(true);
+                        clear(sender, true);
                     })
             );
 
-    private static void clear(boolean silent) {
-        String clear = ChatColor.translateAlternateColorCodes('&', "&0\n&8\n&7\n&f\n").repeat(69);
+    private static void clear(CommandSender sender, boolean silent) {
         String notify = FileManager.getLocale("chat-cleared");
 
         for (Player player : Bukkit.getOnlinePlayers()) {
@@ -36,5 +42,7 @@ public class ClearSubCommand {
                 Messenger.sendMD(player, notify);
             }
         }
+
+        Messenger.sendMD(sender, MDUtil.applyPluginPlaceholders(FileManager.getLocale("command-cleared")));
     }
 }

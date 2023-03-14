@@ -7,6 +7,7 @@ import me.artel.mdchat.impl.Rule;
 import me.artel.mdchat.managers.FileManager;
 import me.artel.mdchat.managers.HookManager;
 import me.clip.placeholderapi.PlaceholderAPI;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -22,6 +23,10 @@ public class MDUtil {
         HookManager.init();
         Announcement.repopulate();
         Rule.repopulate();
+
+        if (shouldEnableMetrics()) {
+            new Metrics(MDChatPlugin.getPlugin(), 17942);
+        }
     }
 
     public static void reload() {
@@ -33,6 +38,10 @@ public class MDUtil {
     /* File Accessors */
 
     // config.yml
+    public static boolean shouldEnableMetrics() {
+        return FileManager.getConfig().getBoolean("metrics", true);
+    }
+
     public static boolean shouldRequireMovement() {
         return FileManager.getConfig().getBoolean("movement-required.chat", false)
                 || FileManager.getConfig().getBoolean("movement-required.commands", false);

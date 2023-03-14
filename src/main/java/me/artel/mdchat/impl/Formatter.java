@@ -49,8 +49,12 @@ public class Formatter {
             format = FileManager.getFormat().get("format");
         }
 
-        if (format instanceof List) {
-            sb.append(format);
+        if (format instanceof List<?>) {
+            for (var entry : (List<?>)format) {
+                if (entry instanceof String) {
+                    sb.append(entry);
+                }
+            }
         } else if (format instanceof String) {
             sb.append(format);
         } else {

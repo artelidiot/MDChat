@@ -30,6 +30,9 @@
 
         <!-- Check for updates here: https://github.com/PlaceholderAPI/PlaceholderAPI/releases -->
         <placeholderapi.version>2.11.2</placeholderapi.version>
+
+        <!-- Check for updates here: https://bstats.org/getting-started/include-metrics -->
+        <bstats.version>3.0.0</bstats.version>
     </properties>
 
     <repositories>
@@ -82,6 +85,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>${bstats.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.MilkBowl</groupId>
             <artifactId>VaultAPI</artifactId>
             <version>${vault.version}</version>
@@ -133,6 +141,10 @@
                         <relocation>
                             <pattern>info.debatty.java.stringsimilarity</pattern>
                             <shadedPattern>${project.groupId}.${project.artifactId}.lib.string-similarity</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.bstats</pattern>
+                            <shadedPattern>${project.groupId}.${project.artifactId}.lib.metrics</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>

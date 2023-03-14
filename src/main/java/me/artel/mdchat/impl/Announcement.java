@@ -12,7 +12,6 @@ import java.util.HashMap;
 public class Announcement {
     @Getter
     public static HashMap<Announcement, String> announcements = new HashMap<>();
-    private static int taskID = -69;
     @Getter
     public ConfigurationSection announcement;
     @Getter
@@ -30,8 +29,17 @@ public class Announcement {
     @Getter
     public String content;
 
+    private static int taskID = -69;
+
     public Announcement(String identifier) {
-        this.identifier = identifier;
+
+        // We don't need to do anything at all if the announcer is disabled
+        if (!FileManager.getRules().getBoolean("enabled", false)) {
+            return;
+        }
+
+        this.identifier = identifier
+                .replace(" ", "_");
 
         this.announcement = FileManager.getAnnouncer().getConfigurationSection("announcements." + identifier);
 
@@ -40,13 +48,18 @@ public class Announcement {
             return;
         }
 
-        // Initialize the announcement
         this.enabled = announcement.getBoolean("enabled", true);
+
+        // We don't need to do anything else since this rule is not enabled
+        if (!enabled) {
+            return;
+        }
+
+        // Initialize announcement components
         this.alignment = announcement.getString("alignment", "default");
         this.permission = announcement.get("permission", false);
         this.sound = announcement.get("sound", false);
         this.world = announcement.getString("world", "");
-
         this.content = announcement.getString("content", "");
 
         announcements.put(this, content);
