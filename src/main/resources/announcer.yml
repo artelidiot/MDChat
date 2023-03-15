@@ -2,14 +2,15 @@
 
 # Should the announcer be enabled?
 enabled: false
-# Should the announcer run numerically ordered?
-# When set to false, announcements will be randomized (duplicates avoided).
-ordered: true
+
+# The delay between announcements (in seconds).
+delay: 300
 # How many players should be online for announcements to be sent?
 # Setting the value to 0 will allow announcements to be sent all the time.
 minimum-players: 1
-# The delay between announcements (in seconds).
-delay: 300
+# Should the announcer run numerically ordered?
+# When set to false, announcements will be randomized (duplicates avoided).
+ordered: true
 
 # The announcements that will be run (ordered).
 # Available alignments: default (untouched), center, left, right

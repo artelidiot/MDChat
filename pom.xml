@@ -16,11 +16,8 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- Check for updates here: https://github.com/SpongePowered/Configurate/releases -->
-        <configurate.version>4.1.2</configurate.version>
-
         <!-- Check for updates here: https://github.com/JorelAli/CommandAPI/releases -->
-        <commandapi.version>8.7.6</commandapi.version>
+        <commandapi.version>8.8.0</commandapi.version>
 
         <!-- Check for updates here: https://github.com/tdebatty/java-string-similarity/releases -->
         <similarity.version>2.0.0</similarity.version>
@@ -32,7 +29,7 @@
         <placeholderapi.version>2.11.2</placeholderapi.version>
 
         <!-- Check for updates here: https://bstats.org/getting-started/include-metrics -->
-        <bstats.version>3.0.0</bstats.version>
+        <bstats.version>3.0.1</bstats.version>
     </properties>
 
     <repositories>
@@ -63,11 +60,6 @@
             <version>0.0.9-alpha</version>
         </dependency>
         <dependency>
-            <groupId>org.spongepowered</groupId>
-            <artifactId>configurate-yaml</artifactId>
-            <version>${configurate.version}</version>
-        </dependency>
-        <dependency>
             <groupId>dev.jorel</groupId>
             <artifactId>commandapi-shade</artifactId>
             <version>${commandapi.version}</version>
@@ -80,7 +72,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.26</version>
             <scope>provided</scope>
         </dependency>
 
@@ -129,10 +121,6 @@
                         <relocation>
                             <pattern>me.artel.feather</pattern>
                             <shadedPattern>${project.groupId}.${project.artifactId}.lib.feather</shadedPattern>
-                        </relocation>
-                        <relocation>
-                            <pattern>org.spongepowered.configurate</pattern>
-                            <shadedPattern>${project.groupId}.${project.artifactId}.lib.configurate</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>dev.jorel.commandapi</pattern>

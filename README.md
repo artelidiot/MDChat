@@ -1,13 +1,9 @@
 # MDChat
 
-***
-
 ### Description
 
-MDChat is a chat management plugin implementing MineDown. It has a strong focus on simplicity, stability and
+MDChat is a chat management plugin for Spigot implementing [MineDown](https://github.com/Phoenix616/MineDown). It has a strong focus on simplicity, stability and
 performance. Includes features such as RegExp parsing, advanced chat formatting, protection from spamming, advertising and more.
-
-***
 
 ### License
 
@@ -22,7 +18,6 @@ performance. Includes features such as RegExp parsing, advanced chat formatting,
 > the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) for more details.
 
 ### Embedded Resources
-* [Configurate](https://github.com/SpongePowered/Configurate) - We use `Configurate` to handle all of our configuration files.
 * [CommandAPI](https://github.com/JorelAli/CommandAPI) - We use `CommandAPI` to register all of our commands.
 * [java-string-similarity](https://github.com/tdebatty/java-string-similarity) - We use `java-string-similarity` to perform our similarity checks.
 * [bStats](https://github.com/Bastian/bStats) - We use `bStats` to collect metrics.

@@ -2,6 +2,7 @@
 
 # Should we enable our MOTD?
 enabled: false
+
 # Delay sending the MOTD by this value (in milliseconds).
 delay: 1000
 
