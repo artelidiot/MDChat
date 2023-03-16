@@ -32,12 +32,13 @@ permissions:
             description: "Grants access to reload MDChat."
 
       # Permission to view all announcements.
+      # Individual announcement viewing permissions are registered at runtime via. identifiers.
       'mdchat.announcement.*':
         description: "Grants access to view all announcements."
 
-      # Permissions for bypassing filters, cooldowns, etc.
+      # Permissions for bypassing filters, delays, etc.
       'mdchat.bypass.*':
-        description: "Grants access to bypass all filters, cooldowns, etc."
+        description: "Grants access to bypass all filters, delays, etc."
         children:
           'mdchat.bypass.clear':
             description: "Grants access to bypass chat clearing."
@@ -69,7 +70,7 @@ permissions:
                 description: "Grants access to bypass the chat excessive uppercase check."
               'mdchat.bypass.uppercase.commands':
                 description: "Grants access to bypass the command excessive uppercase check."
-          # Per-rule bypass permissions are automatically generated at runtime via. rule identifiers.
+          # Individual rule bypass permissions are registered at runtime via. identifiers.
           'mdchat.bypass.rule.*':
             description: "Grants access to bypass all rules."
 
