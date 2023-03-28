@@ -49,6 +49,7 @@ public class Formatter {
             format = FileManager.getFormat().get("format");
         }
 
+        // TODO: Despite being run in async, this is quite inefficient and could use some optimizing
         if (format instanceof List<?>) {
             for (var entry : (List<?>)format) {
                 if (entry instanceof String) {

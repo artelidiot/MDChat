@@ -10,19 +10,17 @@ By default, the plugin has no features enabled to ensure new installations don't
 * [PlaceholderAPI](https://www.spigotmc.org/resources/6245/) support.
 * Full RGB support, including click, hover, and more.
   * View the [MineDown](https://github.com/Phoenix616/MineDown) wiki for available formatting.
-* Automatic announcer with a configurable delay, text alignment, sounds, viewing permissions and more. **- Coming soon™️**
+* ~~Automatic announcer with a configurable delay, text alignment, sounds, viewing permissions and more.~~ **- Coming soon™️**
 * Configurable chat and command delays (in milliseconds).
 * Optional movement requirements for chatting and performing commands.
-  * Helpful for preventing bot spam attacks.
-* Extensive similarity checks for chat and commands, with support for case sensitivity, ignoring usernames, minimum lengths, percentages and whitelisted words.
-* Extensive uppercase checks for chat and commands, with support for both cancelling or replacing with lowercase, ignoring usernames, minimum lengths, percentages and whitelisted words.
+* Extensive parrot, similarity and uppercase checks, with support for case sensitivity, ignoring usernames, minimum lengths, percentage thresholds and whitelisted words.
 * Advanced chat formatting, including a global, per-group and per-player system with full support for RGB colors, click, hover and more.
 * Every single message sent by MDChat can be modified.
 * Message of the day with advanced formatting support and an optional sending delay.
-* Outrageously configurable rule parsing system, supporting diacritical mark stripping (`é` -> `e`), regular expression, cancelling or replacing, command execution upon violation and individually toggle checking for anvils, books, chat, commands and signs.  
+* Outrageously configurable rule parsing system, supporting diacritical mark stripping (`éxámplé` -> `example`), regular expression parsing, cancelling or replacing violations, command execution upon violation and individually toggling checking for anvils, books, chat, commands and signs.
 
 ### Commands
-* `/mdchat clear [-s]` - Clear the chat (optionally: silently).
+* `/mdchat clear [-s]` - Clear the chat (optional `silent` modifier).
 * `/mdchat motd` - View the MOTD from MDChat.
 * `/mdchat reload` - Reload MDChat's configuration files.
 

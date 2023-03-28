@@ -83,6 +83,7 @@ public class Announcement {
         // Just in case
         if (taskID == -69) {
             // TODO: Figure out how to best iterate over the announcements, in order, on a timer
+            // TODO: Also figure out how to handle alignment and per-world announcements being separated
         }
     }
 

@@ -13,7 +13,7 @@ public class FileManager {
             announcerFile = new YAMLFile(plugin, "announcer.yml"),
             configFile = new YAMLFile(plugin, "config.yml"),
             formatFile = new YAMLFile(plugin, "format.yml"),
-            localeFile = new YAMLFile(plugin, "locale.yml"),
+            localeFile = new YAMLFile(plugin, "locale.yml"), // TODO: Switch to an i18n locale system
             motdFile = new YAMLFile(plugin, "motd.yml"),
             rulesFile = new YAMLFile(plugin, "rules.yml");
 
@@ -58,14 +58,6 @@ public class FileManager {
         return localeFile.getYaml();
     }
 
-    public static YamlConfiguration getMOTD() {
-        return motdFile.getYaml();
-    }
-
-    public static YamlConfiguration getRules() {
-        return rulesFile.getYaml();
-    }
-
     public static String getLocale(String path) {
         String result = getLocale().getString(path);
 
@@ -74,5 +66,13 @@ public class FileManager {
         }
 
         return result;
+    }
+
+    public static YamlConfiguration getMOTD() {
+        return motdFile.getYaml();
+    }
+
+    public static YamlConfiguration getRules() {
+        return rulesFile.getYaml();
     }
 }

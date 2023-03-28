@@ -1,10 +1,7 @@
 package me.artel.mdchat.listeners;
 
 import me.artel.feather.messaging.Messenger;
-import me.artel.mdchat.checks.DelayCheck;
-import me.artel.mdchat.checks.MovementCheck;
-import me.artel.mdchat.checks.SimilarityCheck;
-import me.artel.mdchat.checks.UppercaseCheck;
+import me.artel.mdchat.checks.*;
 import me.artel.mdchat.impl.Formatter;
 import me.artel.mdchat.impl.Rule;
 import me.artel.mdchat.managers.FileManager;
@@ -76,6 +73,12 @@ public class Listeners implements Listener {
             return;
         }
 
+        if (ParrotCheck.chat(e.getPlayer(), e.getMessage())) {
+            Messenger.sendMD(e.getPlayer(), FileManager.getLocale("chat-parrot"));
+            e.setCancelled(true);
+            return;
+        }
+
         if (UppercaseCheck.chat(e.getPlayer(), e.getMessage())) {
             Messenger.sendMD(e.getPlayer(), FileManager.getLocale("chat-uppercase"));
             e.setMessage(UppercaseCheck.violate(e, e.getMessage()));
@@ -94,6 +97,7 @@ public class Listeners implements Listener {
             Formatter.chat(e);
         }
 
+        ParrotCheck.setLatestChatMessage(e.getMessage());
         SimilarityCheck.getChatHistory().put(e.getPlayer(), e.getMessage());
     }
 

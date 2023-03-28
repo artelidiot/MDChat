@@ -56,6 +56,11 @@ permissions:
                 description: "Grants access to bypass the chat movement requirement."
               'mdchat.bypass.movement.commands':
                 description: "Grants access to bypass the command movement requirement."
+          'mdchat.bypass.parrot':
+            description: "Grants access to bypass the parrot check."
+          # Individual rule bypass permissions are registered at runtime via. identifiers.
+          'mdchat.bypass.rule.*':
+            description: "Grants access to bypass all rules."
           'mdchat.bypass.similarity.*':
             description: "Grants access to bypass all similarity checks."
             children:
@@ -70,9 +75,6 @@ permissions:
                 description: "Grants access to bypass the chat excessive uppercase check."
               'mdchat.bypass.uppercase.commands':
                 description: "Grants access to bypass the command excessive uppercase check."
-          # Individual rule bypass permissions are registered at runtime via. identifiers.
-          'mdchat.bypass.rule.*':
-            description: "Grants access to bypass all rules."
 
       # Permissions for colors, formatting, etc.
       'mdchat.color.*':

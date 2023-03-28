@@ -58,7 +58,7 @@ public class MDUtil {
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(MDChatPlugin.getPlugin(),
                 () -> Messenger.sendMD(player, motd),
-                // We divide the delay by 50, so it works in milliseconds
+                // The delay value is divided by 50, so it works in milliseconds
                 delay > 0 ? (delay / 50) : 0);
     }
 

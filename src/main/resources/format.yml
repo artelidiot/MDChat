@@ -21,7 +21,7 @@ format: "{player_name}: {message}"
 # Per-group formatting
 # Use this to give specific groups a unique format. Requires Vault and a permission plugin such as LuckPerms.
 # Format:
-#   group-name: "format"
+#   'group-name': "format"
 group-formats:
   # A unique format for the 'default' group, for example.
   'default': "[Default] {player_name}: {message}"
