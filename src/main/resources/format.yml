@@ -4,8 +4,8 @@
 enabled: false
 
 # Should we use the advanced formatter?
-# This enables features such as hover, click and more.
-# Set this to false if you don't plan on using those features to avoid potential conflicts.
+#   This enables features such as hover, click and more.
+#   Set this to false if you don't plan on using those features to avoid potential conflicts.
 use-advanced-formatter: true
 
 # Available Placeholders for Formatting:
@@ -19,7 +19,7 @@ use-advanced-formatter: true
 format: "{player_name}: {message}"
 
 # Per-group formatting
-# Use this to give specific groups a unique format. Requires Vault and a permission plugin such as LuckPerms.
+#   Use this to give specific groups a unique format. Requires Vault and a permission plugin such as LuckPerms.
 # Format:
 #   'group-name': "format"
 group-formats:
@@ -27,7 +27,7 @@ group-formats:
   'default': "[Default] {player_name}: {message}"
 
 # Per-player formatting
-# Use this to give specific players a unique format.
+#   Use this to give specific players a unique format.
 # Format:
 #   'player-uuid': "format"
 player-formats:

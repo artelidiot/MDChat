@@ -13,6 +13,8 @@ public class Announcement {
     @Getter
     public static HashMap<Announcement, String> announcements = new HashMap<>();
     @Getter
+    public static HashMap<Announcement, String> worldAnnouncements = new HashMap<>();
+    @Getter
     public ConfigurationSection announcement;
     @Getter
     public String identifier;
@@ -29,7 +31,7 @@ public class Announcement {
     @Getter
     public String content;
 
-    private static int taskID = -69;
+    private static int taskID = 0;
 
     public Announcement(String identifier) {
 
@@ -62,7 +64,12 @@ public class Announcement {
         this.world = announcement.getString("world", "");
         this.content = announcement.getString("content", "");
 
-        announcements.put(this, content);
+        // Separate world announcements and global announcements
+        if (Bukkit.getWorld(this.world) != null) {
+            worldAnnouncements.put(this, content);
+        } else {
+            announcements.put(this, content);
+        }
     }
 
     public static void repopulate() {
@@ -81,7 +88,7 @@ public class Announcement {
 
     public static void startTask() {
         // Just in case
-        if (taskID == -69) {
+        if (taskID == 0) {
             // TODO: Figure out how to best iterate over the announcements, in order, on a timer
             // TODO: Also figure out how to handle alignment and per-world announcements being separated
         }
@@ -89,10 +96,10 @@ public class Announcement {
 
     public static void stopTask() {
         // Make sure the task ID is set
-        if (taskID != -69) {
+        if (taskID != 0) {
             Bukkit.getScheduler().cancelTask(taskID);
             // Revert to original ID to signify it is no longer running for future start calls
-            taskID = -69;
+            taskID = 0;
         }
     }
 }

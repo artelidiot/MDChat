@@ -52,6 +52,15 @@ rules:
     # This is a placeholder for a powerful and predefined URL/IP address regex filter.
     trigger: '{advert-regex}'
     response: "{@advert}"
+  'repeated':
+    enabled: false
+    regex: true
+    replace: true
+    # Replaces repeated characters with one character "eeeeexample" -> "example"
+    replacement: '$1'
+    # Detects repeated characters such as "eeeeexample", ignoring numbers to prevent false positives.
+    trigger: '(?![0-9])(.)\1{5,}'
+    response: "{@repeated}"
   'anal':
     enabled: false
     regex: true
@@ -76,6 +85,12 @@ rules:
     cancel: true
     trigger: '(b+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*c+(\W|\d|_)*h)'
     response: "{@misogyny}"
+  'chink':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(c+(\W|\d|_)*h+(\W|\d|_)*i+(\W|\d|_)*n+(\W|\d|_)*k)'
+    response: "{@racism}"
   'chode':
     enabled: false
     regex: true
@@ -94,6 +109,12 @@ rules:
     cancel: true
     trigger: '(c+(\W|\d|_)*o+(\W|\d|_)*c+(\W|\d|_)*k)'
     response: "{@swear}"
+  'coon':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(c+(\W|\d|_)*o+(\W|\d|_)*o+(\W|\d|_)*n)'
+    response: "{@racism}"
   'cum':
     enabled: false
     regex: true
@@ -226,6 +247,12 @@ rules:
     cancel: true
     trigger: '(v+(\W|\d|_)*a+(\W|\d|_)*g+(\W|\d|_)*i+(\W|\d|_)*n+(\W|\d|_)*a)'
     response: "{@swear}"
+  'wetback':
+    enabled: false
+    regex: true
+    cancel: true
+    trigger: '(w+(\W|\d|_)*e+(\W|\d|_)*t+(\W|\d|_)*b+(\W|\d|_)*a+(\W|\d|_)*c+(\W|\d|_)*k)'
+    response: "{@racism}"
   'whore':
     enabled: false
     regex: true

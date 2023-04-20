@@ -6,30 +6,30 @@ enabled: false
 # The delay between announcements (in seconds).
 delay: 300
 # How many players should be online for announcements to be sent?
-# Setting the value to 0 will allow announcements to be sent all the time.
+#   Setting the value to 0 will allow announcements to be sent all the time.
 minimum-players: 1
 # Should the announcer run numerically ordered?
-# When set to false, announcements will be randomized (duplicates avoided).
+#   When set to false, announcements will be randomized (duplicates avoided).
 ordered: true
 
-# The announcements that will be run (ordered).
-# Available alignments: default (untouched), center, left, right
-# Available sounds: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+# The announcements.
+#   Available alignments: default (untouched), center, left, right
+#   Available sounds: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
 announcements:
   '1':
     # Announcements are enabled by default and this setting does not need to be defined.
-    # They can be disabled individually if desired.
-    enabled: true
+    #   They can be disabled individually if desired.
+    enabled: false
     # If the alignment is not specified, it will use default alignment.
     alignment: "default"
     # If a permission is not specified or set to false, it will be ignored.
-    permission: "mdchat.announcement.three"
+    permission: "mdchat.announcement.one"
     # If the sound option is not specified or set to false, it will be entirely disabled.
     sound:
       # The name of the sound (see above for available sounds).
       name: "block_note_block_pling"
       # The pitch of the sound.
-      # Higher values increase pitch, lower values decrease pitch. Default pitch is 1.0.
+      #   Higher values increase pitch, lower values decrease pitch. Default pitch is 1.0.
       pitch: 1.0
       # The volume of the sound (0.0 = inaudible, 0.5 = half volume, 1.0 = full volume).
       volume: 0.5

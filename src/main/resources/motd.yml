@@ -6,6 +6,11 @@ enabled: false
 # Delay sending the MOTD by this value (in milliseconds).
 delay: 1000
 
+# Available Placeholders for MOTDs:
+#   {player_name} - The player's username
+#   {player_display_name} - The player's display name
+#   PlaceholderAPI - https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders
+
 # The MOTD to send to players.
 motd: |-
   Hello, {player_display_name}!
