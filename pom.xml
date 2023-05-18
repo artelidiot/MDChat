@@ -16,20 +16,23 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <!-- Check for updates here: https://github.com/artelidiot/Feather/releases/ -->
+        <feather.version>0.0.10-alpha</feather.version>
+
         <!-- Check for updates here: https://github.com/JorelAli/CommandAPI/releases -->
         <commandapi.version>8.8.0</commandapi.version>
 
         <!-- Check for updates here: https://github.com/tdebatty/java-string-similarity/releases -->
         <similarity.version>2.0.0</similarity.version>
 
+        <!-- Check for updates here: https://bstats.org/getting-started/include-metrics -->
+        <bstats.version>3.0.1</bstats.version>
+
         <!-- Check for updates here: https://github.com/MilkBowl/VaultAPI/releases -->
         <vault.version>1.7.1</vault.version>
 
         <!-- Check for updates here: https://github.com/PlaceholderAPI/PlaceholderAPI/releases -->
         <placeholderapi.version>2.11.2</placeholderapi.version>
-
-        <!-- Check for updates here: https://bstats.org/getting-started/include-metrics -->
-        <bstats.version>3.0.1</bstats.version>
     </properties>
 
     <repositories>
@@ -49,15 +52,22 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.19-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.gitlab.artel</groupId>
+            <groupId>com.github.artelidiot</groupId>
             <artifactId>feather</artifactId>
-            <version>0.0.9-alpha</version>
+            <version>${feather.version}</version>
         </dependency>
         <dependency>
             <groupId>dev.jorel</groupId>
@@ -70,17 +80,11 @@
             <version>${similarity.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bukkit</artifactId>
             <version>${bstats.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.github.MilkBowl</groupId>
             <artifactId>VaultAPI</artifactId>

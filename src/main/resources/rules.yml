@@ -58,9 +58,13 @@ rules:
     replace: true
     # Replaces repeated characters with one character "eeeeexample" -> "example"
     replacement: '$1'
-    # Detects repeated characters such as "eeeeexample", ignoring numbers to prevent false positives.
+    # Detects repeated characters such as "eeeeexample" (ignores numbers to prevent false positives).
     trigger: '(?![0-9])(.)\1{5,}'
     response: "{@repeated}"
+    # We don't need to check these for this particular rule.
+    check-anvils: false
+    check-books: false
+    check-signs: false
   'anal':
     enabled: false
     regex: true

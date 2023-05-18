@@ -1,14 +1,18 @@
 package me.artel.mdchat.utils;
 
+import me.artel.feather.integration.Wrapper;
 import me.artel.feather.messaging.Messenger;
 import me.artel.mdchat.MDChatPlugin;
 import me.artel.mdchat.impl.Announcement;
 import me.artel.mdchat.impl.Rule;
+import me.artel.mdchat.listeners.DataListeners;
+import me.artel.mdchat.listeners.RuleListeners;
 import me.artel.mdchat.managers.FileManager;
 import me.artel.mdchat.managers.HookManager;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * Utility class specifically for MDChat
@@ -16,12 +20,18 @@ import org.bukkit.entity.Player;
  * @author Artel
  */
 public class MDUtil {
+    private static final JavaPlugin plugin = MDChatPlugin.getPlugin();
 
     public static void init() {
         FileManager.init();
         HookManager.init();
+
         Announcement.repopulate();
         Rule.repopulate();
+
+        Wrapper.init()
+                .registerListener(plugin, new DataListeners())
+                .registerListener(plugin, new RuleListeners());
     }
 
     public static void reload() {

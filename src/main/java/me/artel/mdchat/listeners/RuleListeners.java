@@ -8,15 +8,16 @@ import me.artel.mdchat.managers.FileManager;
 import me.artel.mdchat.utils.MDUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.inventory.PrepareAnvilEvent;
-import org.bukkit.event.player.*;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import org.bukkit.event.player.PlayerEditBookEvent;
 
 import java.util.Arrays;
 
-public class Listeners implements Listener {
+public class RuleListeners implements Listener {
 
     @EventHandler // No coyotes were harmed in the making of this listener
     public void onPrepareAnvil(PrepareAnvilEvent e) {
@@ -154,25 +155,5 @@ public class Listeners implements Listener {
                 }
             }
         }
-    }
-
-    // Data tracking, etc.
-
-    @EventHandler(priority = EventPriority.LOWEST)
-    public void onPlayerJoin(PlayerJoinEvent e) {
-        if (MDUtil.shouldRequireMovement()) {
-            MovementCheck.getJoinLocations().put(e.getPlayer(), e.getPlayer().getLocation());
-        }
-
-        if (MDUtil.shouldSendMOTD()) {
-            MDUtil.sendMOTD(e.getPlayer());
-        }
-    }
-
-    @EventHandler(priority = EventPriority.LOWEST)
-    public void onPlayerQuit(PlayerQuitEvent e) {
-        DelayCheck.cleanUp(e.getPlayer());
-        MovementCheck.cleanUp(e.getPlayer());
-        SimilarityCheck.cleanUp(e.getPlayer());
     }
 }

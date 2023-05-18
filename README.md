@@ -28,7 +28,7 @@ By default, the plugin has no features enabled to ensure new installations don't
 * You can find all accurate and up-to-date permissions on [our wiki](https://github.com/artelidiot/MDChat/wiki/Permissions).
 
 ### License
-> Copyright (C) 2023 Artel
+> Copyright (C) 2022-2023 Artel
 >
 > This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
 > License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later

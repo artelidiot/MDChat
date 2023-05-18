@@ -19,6 +19,7 @@ command-uppercase: "&e\u26A0 Please refrain from using excessive uppercase in yo
 # Locale options for rule responses
 unicode: "&e\u26A0 Please refrain from using special characters."
 advert: "&e\u26A0 Please refrain from using URLs or IP addresses."
+repeated: "&e\u26A0 Please refrain from excessively repeating characters."
 discrimination: "&c\u26A0 Discrimination is not allowed on this server."
 misogyny: "&c\u26A0 Misogyny is not allowed on this server."
 racism: "&c\u26A0 Racism is not allowed on this server."
