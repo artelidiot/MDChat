@@ -63,7 +63,7 @@ public class Formatter {
             MDChatPlugin.getPlugin().getLogger().warning("Invalid format detected: " + format);
         }
 
-        return MDUtil.applyAllPlaceholders(Messenger.parseHexColors(sb.toString()), player)
+        return MDUtil.applyAllPlaceholders(sb.toString(), player)
                 .replace("{message}", messageBuilder(player, message));
     }
 

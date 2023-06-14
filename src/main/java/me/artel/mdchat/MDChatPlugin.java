@@ -16,13 +16,13 @@ public class MDChatPlugin extends JavaPlugin {
 
     @Override
     public void onLoad() {
+        plugin = this;
+
         CommandManager.init(LOAD);
     }
 
     @Override
     public void onEnable() {
-        plugin = this;
-
         MDUtil.init();
         CommandManager.init(ENABLE);
 

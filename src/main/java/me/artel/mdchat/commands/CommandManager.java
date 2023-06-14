@@ -2,8 +2,8 @@ package me.artel.mdchat.commands;
 
 import com.google.common.collect.ImmutableList;
 import dev.jorel.commandapi.CommandAPI;
+import dev.jorel.commandapi.CommandAPIBukkitConfig;
 import dev.jorel.commandapi.CommandAPICommand;
-import dev.jorel.commandapi.CommandAPIConfig;
 import me.artel.mdchat.MDChatPlugin;
 import me.artel.mdchat.commands.mdchat.MDChatCommand;
 
@@ -15,9 +15,9 @@ public class CommandManager {
 
     public static void init(Stage stage) {
         switch (stage) {
-            case LOAD -> CommandAPI.onLoad(new CommandAPIConfig());
+            case LOAD -> CommandAPI.onLoad(new CommandAPIBukkitConfig(MDChatPlugin.getPlugin()));
             case ENABLE -> {
-                CommandAPI.onEnable(MDChatPlugin.getPlugin());
+                CommandAPI.onEnable();
                 commands.forEach(CommandAPICommand::register);
             }
             case DISABLE -> commands.forEach(command -> CommandAPI.unregister(command.getName()));
