@@ -6,10 +6,10 @@
 
     <groupId>me.artel</groupId>
     <artifactId>mdchat</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <name>MDChat</name>
-    <description>A chat management plugin for Spigot implementing MineDown.</description>
+    <description>A chat management plugin for Spigot and Paper implementing MineDown.</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -54,7 +54,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
+            <version>1.18.28</version>
             <scope>provided</scope>
         </dependency>
 

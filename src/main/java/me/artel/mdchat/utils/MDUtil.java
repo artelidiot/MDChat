@@ -3,7 +3,6 @@ package me.artel.mdchat.utils;
 import me.artel.feather.integration.Wrapper;
 import me.artel.feather.messaging.Messenger;
 import me.artel.mdchat.MDChatPlugin;
-import me.artel.mdchat.impl.Announcement;
 import me.artel.mdchat.impl.Rule;
 import me.artel.mdchat.listeners.DataListeners;
 import me.artel.mdchat.listeners.RuleListeners;
@@ -26,7 +25,8 @@ public class MDUtil {
         FileManager.init();
         HookManager.init();
 
-        Announcement.repopulate();
+        // TODO
+        // Announcement.repopulate();
         Rule.repopulate();
 
         Wrapper.init()
@@ -36,7 +36,9 @@ public class MDUtil {
 
     public static void reload() {
         FileManager.reload();
-        Announcement.repopulate();
+
+        // TODO
+        // Announcement.repopulate();
         Rule.repopulate();
     }
 

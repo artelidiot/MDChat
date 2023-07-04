@@ -23,7 +23,8 @@ public class FileManager {
     }
 
     public static void save() {
-        announcerFile.save();
+        // TODO
+        // announcerFile.save();
         configFile.save();
         formatFile.save();
         localeFile.save();
@@ -34,7 +35,8 @@ public class FileManager {
     @SneakyThrows
     public static void reload() {
         save();
-        announcerFile.reload();
+        // TODO
+        // announcerFile.reload();
         configFile.reload();
         formatFile.reload();
         localeFile.reload();

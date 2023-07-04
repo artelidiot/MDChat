@@ -1,6 +1,7 @@
 package me.artel.mdchat.commands.mdchat.subcommands;
 
 import dev.jorel.commandapi.CommandAPICommand;
+import lombok.Getter;
 import me.artel.feather.messaging.Messenger;
 import me.artel.mdchat.managers.FileManager;
 import me.artel.mdchat.utils.MDUtil;
@@ -16,7 +17,8 @@ public class ClearSubCommand {
             .translateAlternateColorCodes('&', "&0\n&8\n&7\n&f\n")
             .repeat(69);
 
-    public static CommandAPICommand clearSubCommand = new CommandAPICommand("clear")
+    @Getter
+    public static CommandAPICommand instance = new CommandAPICommand("clear")
             .withPermission("mdchat.command.clear")
             .withShortDescription("Clears the chat.")
             .executes((sender, args) -> {

@@ -52,7 +52,7 @@ public class Announcement {
 
         this.enabled = announcement.getBoolean("enabled", true);
 
-        // We don't need to do anything else since this rule is not enabled
+        // We don't need to do anything else since this announcement is not enabled
         if (!enabled) {
             return;
         }

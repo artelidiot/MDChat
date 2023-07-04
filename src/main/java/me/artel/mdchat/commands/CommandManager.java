@@ -10,7 +10,7 @@ import me.artel.mdchat.commands.mdchat.MDChatCommand;
 public class CommandManager {
 
     private static final ImmutableList<CommandAPICommand> commands = ImmutableList.of(
-            MDChatCommand.mdChatCommand
+            MDChatCommand.getInstance()
     );
 
     public static void init(Stage stage) {

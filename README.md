@@ -1,7 +1,7 @@
 # MDChat
 
 ### Description
-MDChat is a chat management plugin for Spigot implementing [MineDown](https://github.com/Phoenix616/MineDown). It has a strong focus on simplicity, stability and
+MDChat is a chat management plugin for SpigotMC and Paper implementing [MineDown](https://github.com/Phoenix616/MineDown). It has a strong focus on simplicity, stability and
 performance.
 It is 100% free and open source, and always will be. Any and all contributions and feedback are welcome.
 
@@ -17,7 +17,7 @@ By default, the plugin has no features enabled to ensure new installations don't
 * Advanced chat formatting, including a global, per-group and per-player system with full support for RGB colors, click, hover and more.
 * Every single message sent by MDChat can be modified.
 * Message of the day with advanced formatting support and an optional sending delay.
-* Outrageously configurable rule parsing system, supporting diacritical mark stripping (`éxámplé` -> `example`), regular expression parsing, cancelling or replacing violations, command execution upon violation and individually toggling checking for anvils, books, chat, commands and signs.
+* Outrageously configurable rule parsing system, supporting diacritical mark stripping (`éxámplé` -> `example`), regular expression parsing, cancelling or replacing violations, command execution upon violation and toggles for anvil, book, chat, command and sign checking per-rule.
 
 ### Commands
 * `/mdchat clear [-s]` - Clear the chat (optional `silent` modifier).
